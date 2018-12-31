@@ -7,11 +7,99 @@
      fxLayoutGap.xs="0">
 
   <div fxFlex="40">
-    <p>Display the details of the Dish here</p>
+    <div fxFlex *ngIf="dish">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>
+            <h3>{{dish.name | uppercase}}</h3>
+          </mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src={{dish.image}} alt={{dish.name}}>
+        <mat-card-content>
+          <p>{{dish.description}}
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button>LIKE</button>
+          <button mat-button>SHARE</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
   </div>
 
   <div fxFlex="40">
-    <p>Display the list of comments here</p>
-  </div>
+    <mat-card-header><b>COMMENTS</b></mat-card-header><br>
 
+      <mat-list *ngIf="dish">
+        <mat-list-item>
+          <h3 matLine>
+            <span> {{dish.comments[0].comment}} </span> <br>
+            <span> {{dish.comments[0].rating}} star</span> <br>
+            <span> -- {{dish.comments[0].author}} </span>
+            <span> {{dish.comments[0].date | date:'medium'}} </span> <br>
+          </h3>
+        </mat-list-item>
+      </mat-list>
+    <br>
+    <br>
+    <br>
+
+    <mat-list *ngIf="dish" >
+      <mat-list-item>
+        <h3 matLine>
+          <span> {{dish.comments[1].comment}} </span> <br>
+          <span> {{dish.comments[1].rating}} star</span> <br>
+          <span> -- {{dish.comments[1].author}} </span>
+          <span> {{dish.comments[1].date | date:'medium'}} </span> <br>
+        </h3>
+      </mat-list-item>
+    </mat-list>
+
+    <br>
+    <br>
+    <br>
+
+    <mat-list *ngIf="dish" >
+      <mat-list-item>
+        <h3 matLine>
+          <span> {{dish.comments[2].comment}} </span> <br>
+          <span> {{dish.comments[2].rating}} star </span> <br>
+          <span> -- {{dish.comments[2].author}} </span>
+          <span> {{dish.comments[2].date | date:'medium'}} </span> <br>
+        </h3>
+      </mat-list-item>
+    </mat-list>
+
+
+    <br>
+    <br>
+    <br>
+
+    <mat-list *ngIf="dish" >
+      <mat-list-item>
+        <h3 matLine>
+          <span> {{dish.comments[3].comment}} </span> <br>
+          <span> {{dish.comments[3].rating}} star</span> <br>
+          <span> -- {{dish.comments[3].author}} </span>
+          <span> {{dish.comments[3].date | date:'medium'}} </span> <br>
+        </h3>
+      </mat-list-item>
+    </mat-list>
+
+    <br>
+    <br>
+    <br>
+
+    <mat-list *ngIf="dish" >
+      <mat-list-item>
+        <h3 matLine>
+          <span> {{dish.comments[4].comment}} </span> <br>
+          <span> {{dish.comments[4].rating}} star </span> <br>
+          <span> -- {{dish.comments[4].author}} </span>
+          <span> {{dish.comments[4].date | date:'medium'}} </span> <br>
+        </h3>
+      </mat-list-item>
+    </mat-list>
+
+  </div>
 </div>
